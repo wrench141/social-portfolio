@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fasthand&family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.notification {
+    width: max-content;
+    height: max-content;
+    padding: 15px 40px;
+    background-color: #fff;
+    position: absolute;
+    border-right: 6px solid #ff4c4c;
+    top: 20px;
+    font-family: "poppins";
+    color: rgb(109, 0, 0);
+    right: 30px;
+    transform: translateX(100%);
+    box-shadow: -10px 10px 20px rgba(185, 185, 185, 0.26);
+    animation: notify 1s ease forwards;
+}
+
+@keyframes notify {
+    to {
+        transform: translateX(0%);
+    }
+}
+
+
+.formwrapper {
+    width: 25%;
+    height: max-content;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px 30px;
+    padding-bottom: 40px;
+    border: 4px solid #9B98FE;
+    box-shadow: -10px 10px 20px rgba(185, 185, 185, 0.26);
+}
+
+.formwrapper .head,
+.formwrapper .sub {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.formwrapper .sub {
+    font-size: 15px;
+    font-weight: 400;
+    color: #B0B0B0;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+
+.formwrapper .inputwrapper {
+    margin-top: 20px;
+}
+
+.formwrapper .inputwrapper .label {
+    font-family: "poppins";
+    font-size: 15px;
+    color: #979797;
+    font-weight: 400;
+}
+
+.formwrapper .inputwrapper .inp {
+    width: 100%;
+    height: 55px;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 0 15px;
+    font-family: "poppins";
+    outline-color: #9B98FE;
+    font-size: 16.5px;
+    border: 3px solid #E9E9E9;
+}
+
+.formwrapper .btn {
+    width: 100%;
+    height: 45px;
+    background-color: #5450F5;
+    border-radius: 10px;
+    margin-top: 40px;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: "poppins";
+    font-weight: 500;
+    font-size: 15.4px;
+}
