@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="filter hide">
+            <div class="popup">
+                <div class="remove flex">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <p class="head">Upload Banners</p>
+                <div class="upload">
+                    <p class="selector">Select Image</p>
+                </div>
+                <button class="btn">Upload</button>
+            </div>
+        </div>
+        <div class="navbar">
+            <p class="head">Dashboard</p>
+            <div class="list flex">
+                <a href="/dashboard/home/dashboard.html" class="link flex">Gallery</a>
+                <a href="/dashboard/home/videos.html" class="link flex">Videos</a>
+                <a href="/dashboard/home/banner.html" class="link flex selected">Banner</a>
+            </div>
+        </div>
+        <div class="filter hide">
+            <div class="popup" style="width:400px">
+                <div class="remove flex">
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>
+                <p class="head">Banner</p>
+                <img src="../../assets/test.jpg" class="img">
+                <button class="rem">Delete banner</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="innerContainer">
+                    <div class="ttopbar">
+                        <p class="head"> <span class="lite">Dashboard</span> > Banner</p>
+                        <div class="nav btn">
+                            <div class="ham"></div>
+                            <div class="ham line2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bannerContainer">
+                <div class="post">
+                    <img src="../../assets/test.jpg" class="img">
+                </div>
+                <button class="btn">Upload Banners</button>
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        const bannerContainer = document.getElementsByClassName("bannerContainer")[0];
+        const banners = bannerContainer.querySelectorAll(".post");
+        
+        function popHandler(elem){
+            console.log(elem)
+        }
+
+        banners.forEach((banner) => banner.addEventListener("click", popHandler(banner)))
+        
+    </script>
+</body>
+
+</html>

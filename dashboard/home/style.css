@@ -4,29 +4,38 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.5s ease;  
+}
+
+.hide{
+    display: none;
+}
+
+.flex {
+    display: flex;
 }
 
 .container {
     width: 100%;
     height: 100vh;
     background: #F0F0F0;
-    display: flex;
     position: relative;
     overflow: hidden;
 }
 
 .container .navbar {
-    width: 400px;
+    width: 250px;
     height: 100%;
     padding: 40px;
 }
 
 .container .main {
-    width: calc(100% - 400px);
+    width: calc(100% - 250px);
     height: 100%;
+    overflow: scroll;
     background: #fff;
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
     padding: 40px;
 }
 
@@ -37,7 +46,7 @@
 .head {
     font-family: "poppins";
     font-weight: 600;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .container .main .postcontainer {
@@ -48,35 +57,35 @@
     margin-top: 50px;
 }
 
-.container .main .postcontainer .post {
-    height: 250px;
+.post {
+    height: 200px;
     width: max-content;
-    overflow: hidden;
     margin-right: 50px;
     display: inline-block;
     background-color: #EFEFEF;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
-.container .main .postcontainer .post .quotation {
+.post .quotation {
     width: 100%;
     height: 30%;
-    display: flex;
     align-items: center;
     font-family: "Poppins";
     justify-content: center;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-.container .main .postcontainer .post .quotation .quots {
+.post .quotation .quots {
     font-size: 24px;
     margin: 0 5px;
 }
 
-.container .main .postcontainer .post .quotation .quots:last-child {
+.post .quotation .quots:last-child {
     margin-top: 34px;
 }
 
-.container .main .postcontainer .post .img {
+.post .img {
     width: auto;
     height: 70%;
 }
@@ -84,25 +93,247 @@
 .container .navbar .list {
     width: 100%;
     height: max-content;
-    display: flex;
     flex-direction: column;
     margin-top: 70px;
     font-family: "poppins";
 }
 
 .container .navbar .list .link {
-    font-size: 16;
+    font-size: 14px;
     width: 100%;
-    height: 45px;
+    height: 35px;
     text-decoration: none;
     color: #666;
-    display: flex;
     align-items: center;
     margin-bottom: 30px;
 }
 
+.btn{
+    margin-top: 40px;
+    border: none;
+    outline: none;
+    background: #5450F5;
+    color: #fff;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-family: "poppins";
+    border-radius: 7px;
+    font-size: 10.4px;
+}
 
 .selected {
-    color: blue;
-    border-right: 5px solid blue;
+    width: 100%;
+    height: 45px;
+    color: #5450F5;
+    border-right: 5px solid #5450F5;
+}
+
+.subposts{
+    width: 100%;
+    height: max-content;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.subposts .post{
+    margin-bottom: 40px;
+    position: relative;
+    overflow: visible;
+}
+.subposts .post .remove{
+    display: none;
+}
+.remove{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAFAFA;
+    color: red;
+    font-size: 25px;
+    top: -20px;
+    right: -20px;
+    box-shadow: 5px 0 10px rgba(151, 151, 151, 0.247);
+}
+
+.subposts .post .img{
+    height: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.subposts .post:hover > .remove{
+    display: flex;
+}
+
+
+.filter{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.422);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+}
+
+.filter .popup{
+    width: 350px;
+    height: max-content;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    padding: 20px;
+}
+
+.filter .popup .upload{
+    width: 100%;
+    height: 100px;
+    border: 2px dashed #BABABA;
+    border-radius: 10px;
+    margin-top: 20px;
+    background: #f0f0f09a;
+    color: #bab;
+    font-family: "poppins";
+    font-size: 10px;
+    display: flex;
+    padding: 0 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.filter .popup .btn{
+    margin-top: 20px;
+}
+
+.filter .popup .remove{
+    box-shadow: 0 0 20px rgb(159, 159, 159);
+}
+
+.filter .popup .img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.topbar{
+    width: 100%;
+    height: max-content;
+}
+
+.innerContainer{
+    width: 90%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar .innerContainer .btn{
+    margin-top: 0;
+}
+
+.main .bannerContainer{
+    width: 100%;
+    height: max-content;
+    margin-top: 50px;
+}
+
+.main .bannerContainer .post{
+    width: 90%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    position: relative
+}
+
+.main .bannerContainer .post .img{
+    height: auto;
+    width: 100%;
+}
+
+
+.rem{
+    padding: 7px 14px;
+    font-family: "poppins";
+    font-size: 11px;
+    color: #fff;
+    background-color: red;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.nav{
+    display: none;
+}
+
+@media only screen and (max-width: 1072px) {
+    .container .main {
+        width: 100%;
+        position: absolute;
+    }
+    .container .main .postcontainer{
+        white-space: normal;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        overflow-x: hidden;
+    }
+    .subposts{
+        flex-direction: column;
+    }
+    .post{
+        height: max-content;
+        width: 100%;
+    }
+    .post .img{
+        width: 100%;
+    }
+    .ttopbar{
+        width: 100%;
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between; 
+    }
+    .nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0;
+        height: 40px;
+        width: 30px; 
+        background: rgba(255, 0, 0, 0);
+        gap: 3.5px;
+    }
+    .ham{
+        width: 25px;
+        height: 2px;
+        border-radius: 10px;
+        background-color: black;
+
+    }
+    .line2{
+        width: 18px;
+    }
+    .filter .popup{
+        width: 80%;
+    }
+    .innerContainer{
+        width: 100%;
+    }
+    .main .bannerContainer .post{
+        height: max-content;
+    }
 }
